@@ -52,8 +52,15 @@ public class Grades {
                 e.printStackTrace();
             }
         }
-        gradeAverage = (double) gradeTotal / gradeCounter;
+        gradeAverage = round2((double) gradeTotal / gradeCounter);
         System.out.println("You entered " + gradeCounter + " grades. The average is " + gradeAverage);
+    }
+
+    public static double round2(double value) { //rounds decimal number to two places
+        double result = value * 100;
+        result = Math.round(result);
+        result = result / 100;
+        return result;
     }
 
 }
